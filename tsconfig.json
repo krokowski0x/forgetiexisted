@@ -16,7 +16,8 @@
     "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": false,
     "pretty": true,
-    "stripInternal": true
+    "stripInternal": true,
+    "resolveJsonModule": true
   },
   "include": ["./src/**/*.tsx", "./src/**/*.ts"],
   "exclude": ["node_modules", "dist", "./test/**/*.spec.ts"]
