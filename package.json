@@ -1,12 +1,13 @@
 {
   "name": "forgetiexisted",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "One-click social media activity and data removal",
+  "main": "src/index.ts.js",
   "scripts": {
     "start": "ts-node ./src/index.ts",
     "start:cli": "ts-node ./src/cli/cli.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint --ext .ts .",
+    "test": "jest"
   },
   "author": "",
   "license": "ISC",

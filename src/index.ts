@@ -1,6 +1,8 @@
 import puppeteer from 'puppeteer-extra'
 import StealthPlugin from 'puppeteer-extra-plugin-stealth'
 import * as dotenv from 'dotenv'
+import deleteFacebookActivity from './facebook/delete_activity'
+import facebookSignIn from './facebook/sign_in'
 
 dotenv.config()
 
@@ -15,8 +17,9 @@ puppeteer
     })
 
     // Facebook
-    // await page.goto('https://www.facebook.com/')
-    // await facebookSignIn(page)
+    await page.goto('https://www.facebook.com/')
+    await facebookSignIn(page)
+    await deleteFacebookActivity(page)
 
     await page.waitForTimeout(2000)
     await page.screenshot({ path: 'example.png' })
