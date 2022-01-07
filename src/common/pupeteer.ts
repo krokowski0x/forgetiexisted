@@ -1,15 +1,14 @@
 import puppeteer from 'puppeteer-extra'
 import StealthPlugin from 'puppeteer-extra-plugin-stealth'
 import * as dotenv from 'dotenv'
-import google from './google'
+import google from '../google'
+import facebook from '../facebook'
+import { Options } from '../types'
+import logger from './logger'
 
 dotenv.config()
 
-interface Options {
-  type: 'Google' | 'Facebook',
-}
-
-const run = async (options: Options, email?: string, password?: string) => {
+const run = async (type: 'Google' | 'Facebook', options: Options, email?: string, password?: string) => {
   puppeteer
     .use(StealthPlugin())
     .launch({ headless: false })
@@ -20,13 +19,20 @@ const run = async (options: Options, email?: string, password?: string) => {
         height: 1200,
       })
 
-      if (options.type === 'Google') {
-        await google(page, {}, email, password)
+      if (type === 'Google') {
+        await google(page, options, email, password)
+      }
+
+      if (type === 'Facebook') {
+        await facebook(page, options, email, password)
       }
 
       await page.waitForTimeout(2000)
       await page.screenshot({ path: 'example.png' })
       await browser.close()
+    })
+    .catch((err) => {
+      logger.error(err)
     })
 }
 

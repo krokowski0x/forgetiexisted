@@ -16,6 +16,9 @@
     ],
     "rules": {
         "no-use-before-define": "off",
-        "semi": "off"
+        "semi": "off",
+        "import/no-unresolved": "off",
+        "import/extensions": "off",
+        "no-console": "off"
     }
 }

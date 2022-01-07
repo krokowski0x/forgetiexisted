@@ -1,14 +1,14 @@
 import { Page } from 'puppeteer'
 import selectors from '../selectors.json'
 
-const facebookSignIn = async (page: Page) => {
-  await page.waitForSelector(selectors.accept_facebook_cookies, { visible: true })
-  await page.click(selectors.accept_facebook_cookies)
+const facebookSignIn = async (page: Page, email?: string, password?: string) => {
+  await page.waitForSelector(selectors.facebook.accept_cookies, { visible: true })
+  await page.click(selectors.facebook.accept_cookies)
 
   await page.waitForSelector('#email', { visible: true })
-  await page.type('#email', process.env.FACEBOOK_USER as string)
-  await page.type('#pass', process.env.FACEBOOK_PWD as string)
-  await page.click(selectors.submit)
+  await page.type('#email', email || process.env.FACEBOOK_USER as string)
+  await page.type('#pass', password || process.env.FACEBOOK_PWD as string)
+  await page.click(selectors.common.submit)
   await page.waitForNavigation()
 }
 

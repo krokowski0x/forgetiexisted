@@ -1,12 +1,7 @@
 import { prompt } from 'enquirer'
-import run from '../pupeteer'
-
-interface PromptAnswers {
-    social_media: 'Google' | 'Facebook',
-    email ? : string,
-    password ? : string,
-    actions: Map < string, string >
-}
+import logger from '../common/logger'
+import run from '../common/pupeteer'
+import { PromptAnswers } from '../types'
 
 (async () => {
   try {
@@ -35,15 +30,15 @@ interface PromptAnswers {
         value: 'delete_activity',
       },
       {
-        name: 'Turn off location tracking',
+        name: 'Turn off location tracking (Google only)',
         value: 'location_tracking',
       },
       {
-        name: 'Turn off Youtube tracking',
+        name: 'Turn off Youtube tracking (Google only)',
         value: 'youtube_tracking',
       },
       {
-        name: 'Turn off search-related tracking',
+        name: 'Turn off search-related tracking (Google only)',
         value: 'search_tracking',
       },
       ],
@@ -55,11 +50,20 @@ interface PromptAnswers {
     ])
 
     if (answers.social_media === 'Google') {
-      await run({
-        type: 'Google',
+      await run('Google', {
+        delete_activity: !!answers.actions.get('delete_activity'),
+        turn_off_location_tracking: !!answers.actions.get('location_tracking'),
+        turn_off_youtube_tracking: !!answers.actions.get('youtube_tracking'),
+        turn_off_search_tracking: !!answers.actions.get('search_tracking'),
       }, answers.email, answers.password)
     }
-  } catch (error) {
-    console.error(error)
+
+    if (answers.social_media === 'Facebook') {
+      await run('Facebook', {
+        delete_activity: !!answers.actions.get('delete_activity'),
+      }, answers.email, answers.password)
+    }
+  } catch (err) {
+    logger.error(err as string)
   }
 })()

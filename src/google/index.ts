@@ -1,14 +1,10 @@
 import { Page } from 'puppeteer'
-import googleSignIn from './sign_in.ts'
-import deleteActivity from './delete_activity.ts'
-import turnOffActivityTracking from './turn_off_tracking.ts'
+import googleSignIn from './sign_in'
+import deleteActivity from './delete_activity'
+import turnOffActivityTracking from './turn_off_tracking'
+import { Options } from '../types'
 
-interface GoogleOptions {
-    delete_activity?: boolean,
-    turn_off_tracking?: boolean
-}
-
-const google = async (page: Page, options: GoogleOptions, email?: string, password?: string) => {
+const google = async (page: Page, options: Options, email?: string, password?: string) => {
   await page.goto('https://myactivity.google.com/myactivity')
   await googleSignIn(page, email, password)
 
@@ -16,7 +12,11 @@ const google = async (page: Page, options: GoogleOptions, email?: string, passwo
     await deleteActivity(page)
   }
 
-  if (options.turn_off_tracking) {
+  if (
+    options.turn_off_location_tracking
+    || options.turn_off_youtube_tracking
+    || options.turn_off_search_tracking
+  ) {
     await turnOffActivityTracking(page)
   }
 }
