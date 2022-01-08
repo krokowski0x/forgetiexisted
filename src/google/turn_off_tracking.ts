@@ -1,4 +1,5 @@
 import { Page } from 'puppeteer'
+import logger from '../common/logger'
 import selectors from '../selectors.json'
 
 const checkIfLocationTrackingExists = async (page: Page) => {
@@ -19,6 +20,7 @@ const checkIfLocationTrackingExists = async (page: Page) => {
 }
 
 const turnOffActivityTracking = async (page: Page) => {
+  logger.log('Google', 'turning off tracking', '')
   await page.waitForSelector(selectors.google.activity_controls)
 
   await checkIfLocationTrackingExists(page)
@@ -34,6 +36,7 @@ const turnOffActivityTracking = async (page: Page) => {
 }
 
 const turnOffLocationTracking = async (page: Page) => {
+  logger.log('Google', 'turning off tracking', 'turning off location tracking')
   await page.click(selectors.google.location_controls)
 
   await page.waitForSelector(selectors.google.turn_off_location_history)
@@ -52,9 +55,11 @@ const turnOffLocationTracking = async (page: Page) => {
   await page.waitForTimeout(1000)
   await page.click(selectors.common.go_back_btn)
   await page.waitForTimeout(1000)
+  logger.log('Google', 'turning off tracking', 'turned off location tracking!')
 }
 
 const turnOffYoutubeTracking = async (page: Page) => {
+  logger.log('Google', 'turning off tracking', 'turning off youtube tracking')
   await page.click(selectors.google.youtube_controls)
 
   await page.waitForSelector(selectors.google.turn_off_youtube_history)
@@ -73,9 +78,11 @@ const turnOffYoutubeTracking = async (page: Page) => {
   await page.waitForTimeout(1000)
   await page.click(selectors.common.go_back_btn)
   await page.waitForTimeout(1000)
+  logger.log('Google', 'turning off tracking', 'turned off youtube tracking!')
 }
 
 const turnOffSearchTracking = async (page: Page) => {
+  logger.log('Google', 'turning off tracking', 'turning off search tracking')
   await page.click(selectors.google.search_controls)
 
   await page.waitForSelector(selectors.google.turn_off_search_history)
@@ -94,6 +101,7 @@ const turnOffSearchTracking = async (page: Page) => {
   await page.waitForTimeout(1000)
   await page.click(selectors.common.go_back_btn)
   await page.waitForTimeout(1000)
+  logger.log('Google', 'turning off tracking', 'turned off search tracking!')
 }
 
 export default turnOffActivityTracking

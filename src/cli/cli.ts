@@ -51,16 +51,21 @@ import { PromptAnswers } from '../types'
 
     if (answers.social_media === 'Google') {
       await run('Google', {
-        delete_activity: !!answers.actions.get('delete_activity'),
-        turn_off_location_tracking: !!answers.actions.get('location_tracking'),
-        turn_off_youtube_tracking: !!answers.actions.get('youtube_tracking'),
-        turn_off_search_tracking: !!answers.actions.get('search_tracking'),
+        // @ts-ignore
+        delete_activity: !!answers.actions.delete_activity,
+        // @ts-ignore
+        turn_off_location_tracking: !!answers.actions.location_tracking,
+        // @ts-ignore
+        turn_off_youtube_tracking: !!answers.actions.youtube_tracking,
+        // @ts-ignore
+        turn_off_search_tracking: !!answers.actions.search_tracking,
       }, answers.email, answers.password)
     }
 
     if (answers.social_media === 'Facebook') {
       await run('Facebook', {
-        delete_activity: !!answers.actions.get('delete_activity'),
+        // @ts-ignore
+        delete_activity: !!answers.actions.delete_activity,
       }, answers.email, answers.password)
     }
   } catch (err) {
