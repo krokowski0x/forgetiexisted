@@ -40,21 +40,21 @@ const turnOffLocationTracking = async (page: Page) => {
   await page.click(selectors.google.location_controls)
 
   await page.waitForSelector(selectors.google.turn_off_location_history)
-  await page.waitForTimeout(1000)
+  await page.waitForTimeout(500)
   await page.click(selectors.google.turn_off_location_history)
 
   await page.waitForSelector(selectors.google.turn_off_history_btn)
-  await page.waitForTimeout(1000)
+  await page.waitForTimeout(500)
   await page.click(selectors.google.turn_off_history_btn)
 
   await page.waitForSelector(selectors.google.turn_off_history_confirm_btn)
-  await page.waitForTimeout(1000)
+  await page.waitForTimeout(500)
   await page.click(selectors.google.turn_off_history_confirm_btn)
 
   await page.waitForSelector(selectors.common.go_back_btn)
-  await page.waitForTimeout(1000)
+  await page.waitForTimeout(500)
   await page.click(selectors.common.go_back_btn)
-  await page.waitForTimeout(1000)
+  await page.waitForTimeout(500)
   logger.log('Google', 'turning off tracking', 'turned off location tracking!')
 }
 
@@ -63,21 +63,21 @@ const turnOffYoutubeTracking = async (page: Page) => {
   await page.click(selectors.google.youtube_controls)
 
   await page.waitForSelector(selectors.google.turn_off_youtube_history)
-  await page.waitForTimeout(1000)
+  await page.waitForTimeout(500)
   await page.click(selectors.google.turn_off_youtube_history)
 
   await page.waitForSelector(selectors.google.turn_off_history_btn)
-  await page.waitForTimeout(1000)
+  await page.waitForTimeout(500)
   await page.click(selectors.google.turn_off_history_btn)
 
   await page.waitForSelector(selectors.google.turn_off_history_confirm_btn)
-  await page.waitForTimeout(1000)
+  await page.waitForTimeout(500)
   await page.click(selectors.google.turn_off_history_confirm_btn)
 
   await page.waitForSelector(selectors.common.go_back_btn)
-  await page.waitForTimeout(1000)
+  await page.waitForTimeout(500)
   await page.click(selectors.common.go_back_btn)
-  await page.waitForTimeout(1000)
+  await page.waitForTimeout(500)
   logger.log('Google', 'turning off tracking', 'turned off youtube tracking!')
 }
 
@@ -86,21 +86,21 @@ const turnOffSearchTracking = async (page: Page) => {
   await page.click(selectors.google.search_controls)
 
   await page.waitForSelector(selectors.google.turn_off_search_history)
-  await page.waitForTimeout(1000)
+  await page.waitForTimeout(500)
   await page.click(selectors.google.turn_off_search_history)
 
   await page.waitForSelector(selectors.google.turn_off_history_btn)
-  await page.waitForTimeout(1000)
+  await page.waitForTimeout(500)
   await page.click(selectors.google.turn_off_history_btn)
 
   await page.waitForSelector(selectors.google.turn_off_history_confirm_btn)
-  await page.waitForTimeout(1000)
+  await page.waitForTimeout(500)
   await page.click(selectors.google.turn_off_history_confirm_btn)
 
   await page.waitForSelector(selectors.common.go_back_btn)
-  await page.waitForTimeout(1000)
+  await page.waitForTimeout(500)
   await page.click(selectors.common.go_back_btn)
-  await page.waitForTimeout(1000)
+  await page.waitForTimeout(500)
   logger.log('Google', 'turning off tracking', 'turned off search tracking!')
 }
 

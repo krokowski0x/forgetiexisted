@@ -10,15 +10,15 @@ const deleteFacebookActivity = async (page: Page, email?: string) => {
   logger.log('Facebook', 'deleting activity', 'removing activity items')
   while (await page.$(selectors.facebook.activity_item_open_actions_btn)) {
     await page.waitForSelector(selectors.facebook.activity_item_open_actions_btn)
-    await page.waitForTimeout(1000)
+    await page.waitForTimeout(500)
     await page.click(selectors.facebook.activity_item_open_actions_btn)
 
     await page.waitForSelector(selectors.facebook.activity_item_delete_btn)
-    await page.waitForTimeout(1000)
+    await page.waitForTimeout(500)
     await page.click(selectors.facebook.activity_item_delete_btn)
 
     await page.waitForSelector(selectors.facebook.activity_item_confirm_btn)
-    await page.waitForTimeout(1000)
+    await page.waitForTimeout(500)
     await page.click(selectors.facebook.activity_item_confirm_btn)
     logger.log('Facebook', 'deleting activity', 'activity item removed!')
   }
