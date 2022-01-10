@@ -1,6 +1,6 @@
 {
   "google": {
-    "sign_in": "#gb > div.gb_Fd.gb_Wd.gb_Md.gb_Ld > div.gb_Qd.gb_Sa.gb_Ed > div.gb_Me > a",
+    "sign_in": "#gb > div.gb_Dd.gb_Ud.gb_Kd.gb_Jd > div.gb_Od.gb_Qa.gb_Cd > div.gb_Ke > a",
     "delete_activity": "#gb > div.gb_Cc.gb_Ac.gb_la.gb_Fc.gb_Hc > div.gb_Ic > div > c-wiz > div > div > nav > a:nth-child(4) > div",
     "delete_all": "#yDmH0d > div.llhEMd.iWO5td > div > div.g3VIld.HbiE4d.Up8vH.Whe8ub.hFEqNb.J9Nfi.iWO5td > span > div.Df8Did > div > c-wiz > div > div.cSvfje > ul > li:nth-child(3)",
     "delete_all_next_btn": "#yDmH0d > div.llhEMd.iWO5td > div > div.g3VIld.HbiE4d.Up8vH.Whe8ub.hFEqNb.J9Nfi.iWO5td > span > div.Df8Did > div:nth-child(1) > c-wiz > div > div.F3FQK > div > div:nth-child(2) > div > button > span",
@@ -21,6 +21,15 @@
     "activity_item_open_actions_btn": "div.cypi58rs.mrt03zmi.pmk7jnqg.rk01pc8j.ke6wolob > div",
     "activity_item_delete_btn": "div[role=\"menuitem\"]",
     "activity_item_confirm_btn": "div.iqfcb0g7.tojvnm2t.a6sixzi8.k5wvi7nf.q3lfd5jv.pk4s997a.bipmatt0.cebpdrjk.qowsmv63.owwhemhu.dp1hu0rb.dhp61c6y.l9j0dhe7.iyyx5f41.a8s20v7p > div > div > div > div.a8nywdso.ihqw7lf3.rz4wbd8a.jb3vyjys.bkfpd7mw.btwxx1t3.j83agx80 > div > div:nth-child(1) > div.oajrlxb2.g5ia77u1.qu0x051f.esr5mh6w.e9989ue4.r7d6kgcz.nhd2j8a9.p7hjln8o.kvgmc6g5.cxmmr5t8.oygrvhab.hcukyx3x.jb3vyjys.rz4wbd8a.qt6c0cv9.a8nywdso.i1ao9s8h.esuyzwwr.f1sip0of.n00je7tq.arfg74bv.qs9ysxi8.k77z8yql.abiwlrkh.p8dawk7l.lzcic4wl.rq0escxv.pq6dq46d.cbu4d94t.taijpn5t.l9j0dhe7.k4urcfbm > div > div.bp9cbjyn.j83agx80.taijpn5t.c4xchbtz.by2jbhx6.a0jftqn4 > div > span"
+  },
+  "twitter": {
+    "sign_in": "a[data-testid=\"loginButton\"]",
+    "username": "input[type=\"text\"]",
+    "next_btn": "#layers > div > div > div > div > div > div > div.css-1dbjc4n.r-1awozwy.r-18u37iz.r-1pi2tsx.r-1777fci.r-1xcajam.r-ipm5af.r-g6jmlv > div.css-1dbjc4n.r-1867qdf.r-1wbh5a2.r-kwpbio.r-rsyp9y.r-1pjcn9w.r-1279nm1.r-htvplk.r-1udh08x > div > div > div.css-1dbjc4n.r-14lw9ot.r-6koalj.r-16y2uox.r-1wbh5a2 > div.css-1dbjc4n.r-16y2uox.r-1wbh5a2.r-1jgb5lz.r-1ye8kvj.r-13qz1uu > div.css-1dbjc4n.r-16y2uox.r-1wbh5a2.r-1dqxon3 > div > div:nth-child(6) > div > span",
+    "login_btn": "#layers > div > div > div > div > div > div > div.css-1dbjc4n.r-1awozwy.r-18u37iz.r-1pi2tsx.r-1777fci.r-1xcajam.r-ipm5af.r-g6jmlv > div.css-1dbjc4n.r-1867qdf.r-1wbh5a2.r-kwpbio.r-rsyp9y.r-1pjcn9w.r-1279nm1.r-htvplk.r-1udh08x > div > div > div.css-1dbjc4n.r-14lw9ot.r-6koalj.r-16y2uox.r-1wbh5a2 > div.css-1dbjc4n.r-16y2uox.r-1wbh5a2.r-1jgb5lz.r-1ye8kvj.r-13qz1uu > div.css-1dbjc4n.r-hhvx09.r-1dye5f7.r-ttdzmv > div > div > div > span",
+    "activity_item_open_actions_btn": "div[data-testid=\"caret\"]",
+    "activity_item_delete_btn": "div[role=\"menuitem\"]",
+    "activity_item_confirm_btn": "div[data-testid=\"confirmationSheetConfirm\"]"
   },
   "common": {  
     "email": "input[type=\"email\"]",

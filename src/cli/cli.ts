@@ -9,12 +9,12 @@ import { PromptAnswers } from '../types'
       type: 'select',
       name: 'social_media',
       message: 'Pick a flavor',
-      choices: ['Google', 'Facebook'],
+      choices: ['Google', 'Facebook', 'Twitter'],
     },
     {
       type: 'input',
       name: 'email',
-      message: 'What is your email?',
+      message: 'What is your email/username?',
     },
     {
       type: 'password',
@@ -64,6 +64,13 @@ import { PromptAnswers } from '../types'
 
     if (answers.social_media === 'Facebook') {
       await run('Facebook', {
+        // @ts-ignore
+        delete_activity: !!answers.actions.delete_activity,
+      }, answers.email, answers.password)
+    }
+
+    if (answers.social_media === 'Twitter') {
+      await run('Twitter', {
         // @ts-ignore
         delete_activity: !!answers.actions.delete_activity,
       }, answers.email, answers.password)
