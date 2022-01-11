@@ -9,6 +9,6 @@ One-click social media activity and data removal
 - [x] Turn off Google activity tracking
 - [x] Delete all Youtube activity
 - [x] Delete all Facebook activity
-- [ ] Delete all Twitter activity
+- [x] Delete all Twitter posts
 - [x] Run script from CLI
 - [ ] Run script from web interface

@@ -19,7 +19,7 @@ const google = async (page: Page, options: Options, email?: string, password?: s
     || options.turn_off_youtube_tracking
     || options.turn_off_search_tracking
   ) {
-    await turnOffActivityTracking(page)
+    await turnOffActivityTracking(page, options)
   }
 }
 

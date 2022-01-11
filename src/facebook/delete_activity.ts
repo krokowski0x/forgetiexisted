@@ -8,18 +8,18 @@ const deleteFacebookActivity = async (page: Page, email?: string) => {
   await page.goto(`https://www.facebook.com/${email || process.env.FACEBOOK_USER_NAME}/allactivity/?activity_history=true&category_key=ALL&manage_mode=true`)
 
   logger.log('Facebook', 'deleting activity', 'removing activity items')
+  // TODO: This can run forver, so it should probably be saving deletion
+  // progress to a file at ceratian checkpoints, e.g. every deleted month
   while (await page.$(selectors.facebook.activity_item_open_actions_btn)) {
-    await page.waitForSelector(selectors.facebook.activity_item_open_actions_btn)
-    await page.waitForTimeout(500)
+    await page.waitForSelector(selectors.facebook.activity_item_open_actions_btn, { visible: true })
     await page.click(selectors.facebook.activity_item_open_actions_btn)
 
-    await page.waitForSelector(selectors.facebook.activity_item_delete_btn)
-    await page.waitForTimeout(500)
+    await page.waitForSelector(selectors.facebook.activity_item_delete_btn, { visible: true })
     await page.click(selectors.facebook.activity_item_delete_btn)
 
-    await page.waitForSelector(selectors.facebook.activity_item_confirm_btn)
-    await page.waitForTimeout(500)
+    await page.waitForSelector(selectors.facebook.activity_item_confirm_btn, { visible: true })
     await page.click(selectors.facebook.activity_item_confirm_btn)
+
     logger.log('Facebook', 'deleting activity', 'activity item removed!')
   }
 }

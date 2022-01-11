@@ -6,7 +6,7 @@ export interface Options {
 }
 
 export interface PromptAnswers {
-    social_media: 'Google' | 'Facebook',
+    social_media: 'Google' | 'Facebook' | 'Twitter',
     email?: string,
     password?: string,
     actions: Map <string, string>
