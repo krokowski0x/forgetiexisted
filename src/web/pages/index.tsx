@@ -23,17 +23,16 @@ const Home: NextPage = () => {
         </p>
 
         <div className={styles.grid}>
-          <button className={styles.card} onClick={() => run('Google', { delete_activity: true })}>
+          <button className={`${styles.card} ${styles.google}`} onClick={() => run('Google', { delete_activity: true })}>
             <h2>Google/YouTube</h2>
           </button>
 
-          <button className={styles.card} onClick={() => run('Facebook', { delete_activity: true })}>
+          <button className={`${styles.card} ${styles.facebook}`} onClick={() => run('Facebook', { delete_activity: true })}>
             <h2>Facebook</h2>
           </button>
 
           <button
-           
-            className={styles.card} onClick={() => run('Twitter', { delete_activity: true })}
+            className={`${styles.card} ${styles.twitter}`} onClick={() => run('Twitter', { delete_activity: true })}
           >
             <h2>Twitter</h2>
           </button>

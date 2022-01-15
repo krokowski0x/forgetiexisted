@@ -103,6 +103,21 @@
   line-height: 1.5;
 }
 
+.twitter {
+  background-color: aqua;
+  color: white;
+}
+
+.facebook {
+  background-color: royalblue;
+  color: white;
+}
+
+.google {
+  background-color: tomato;
+  color: white;
+}
+
 .logo {
   height: 1em;
   margin-left: 0.5rem;
