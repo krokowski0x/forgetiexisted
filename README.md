@@ -4,12 +4,12 @@ One-click social media activity and data removal made with [Puppeteer](https://g
 
 ## Curent features
 
-- ✅ Delete all Google activity (search, android, location etc.)
-- ✅ Delete all Youtube activity
-- ✅ Turn off Google activity tracking (search, android, location etc.)
-- ✅ Delete all Facebook activity
-- ✅ Delete all Twitter posts
-- ✅ Run script from CLI
+- ✅  Delete all Google activity (search, android, location etc.)
+- ✅  Delete all Youtube activity
+- ✅  Turn off Google activity tracking (search, android, location etc.)
+- ✅  Delete all Facebook activity
+- ✅  Delete all Twitter posts
+- ✅  Run script from CLI
 
 ## Future features
 

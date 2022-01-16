@@ -2,10 +2,11 @@
   "name": "forgetiexisted",
   "version": "1.0.0",
   "description": "One-click social media activity and data removal",
-  "main": "src/index.ts.js",
+  "main": "src/cli/cli.ts",
   "scripts": {
-    "start": "ts-node ./src/index.ts",
+    "start": "npm run start:cli",
     "start:cli": "ts-node ./src/cli/cli.ts",
+    "start:web": "cd src/web && npm run dev",
     "lint": "eslint --ext .ts .",
     "test": "jest"
   },
